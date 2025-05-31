@@ -1,6 +1,6 @@
 import { getBrighterColor, getDarkerColor } from "@/utils/color";
 import { memo, useMemo } from "react";
-import { WaveDivider } from "@/components/wave-divider";
+import { BannerDivider } from "@/pages/onboarding/banner/banner-divider";
 
 type OnboardingBannerProps = {
   mainColor?: string;
@@ -38,7 +38,7 @@ const OnboardingBannerComponent = ({
       </div>
 
       {/* 메인 콘텐츠 */}
-      <div className="relative z-10 text-center px-4 flex flex-col gap-3">
+      <div className="relative z-10 text-center px-4 flex flex-col gap-1">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 relative flex flex-row gap-2">
           <span className="inline-block animate-fade-in-up">희망</span>
           <span className="inline-block animate-fade-in-up delay-300">
@@ -61,7 +61,7 @@ const OnboardingBannerComponent = ({
 
       {/* 하단 웨이브 효과 */}
       <div className="absolute bottom-0 left-0 w-full">
-        <WaveDivider />
+        <BannerDivider />
       </div>
     </div>
   );

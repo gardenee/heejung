@@ -1,12 +1,12 @@
-type WaveDividerProps = {
+type BannerDividerProps = {
   className?: string;
   fillColor?: string;
 };
 
-export const WaveDivider = ({
+export const BannerDivider = ({
   className = "w-full h-12",
   fillColor = "#f9fafb",
-}: WaveDividerProps) => {
+}: BannerDividerProps) => {
   return (
     <svg
       className={className}
