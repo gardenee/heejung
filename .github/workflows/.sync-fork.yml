@@ -10,9 +10,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.FORK_PAT }}
+          fetch-depth: 0
 
-      - name: Remove workflow folder before pushing
-        run: rm -rf .github
+      - name: Create temp branch without workflow
+        run: |
+          git checkout -b fork-sync-temp
+          git rm -r --cached .github
+          rm -rf .github
+          git commit -m "Remove workflow for fork sync"
 
       - name: Set remote and force push to fork
         env:
@@ -22,4 +27,4 @@ jobs:
           git config --global user.email "actions@github.com"
           git remote remove origin
           git remote add fork https://x-access-token:${PAT}@github.com/gardenee/heejung.git
-          git push fork main --force
+          git push fork fork-sync-temp:main --force
