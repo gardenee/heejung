@@ -1,5 +1,7 @@
+import { OnboardingPage } from "./pages/onboarding";
+
 const App = () => {
-  return <div>Hello World</div>;
+  return <OnboardingPage />;
 };
 
 export default App;
