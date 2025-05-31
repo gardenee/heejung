@@ -73,13 +73,6 @@
   animation-delay: 1.5s;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 html,
 body,
 #root {
@@ -140,60 +133,60 @@ body,
   --sidebar-ring: oklch(0.708 0 0);
 
   /* 더불어민주당 */
-  --party-minju-lighter: #d2dbf6;
-  --party-minju-light: #7587c8;
-  --party-minju-main: #152484;
-  --party-minju-deep: #101a60;
-  --party-minju-deeper: #080e2f;
+  --party-1-lighter: #d2dbf6;
+  --party-1-light: #7587c8;
+  --party-1-main: #152484;
+  --party-1-deep: #101a60;
+  --party-1-deeper: #080e2f;
 
   /* 국민의힘 */
-  --party-kukmin-lighter: #ffd9df;
-  --party-kukmin-light: #ff9ca7;
-  --party-kukmin-main: #e61e2b;
-  --party-kukmin-deep: #9a141e;
-  --party-kukmin-deeper: #48070a;
+  --party-2-lighter: #ffd9df;
+  --party-2-light: #ff9ca7;
+  --party-2-main: #e61e2b;
+  --party-2-deep: #9a141e;
+  --party-2-deeper: #48070a;
 
   /* 조국혁신당 */
-  --party-joguk-lighter: #c2e0f9;
-  --party-joguk-light: #59b2e7;
-  --party-joguk-main: #0073cf;
-  --party-joguk-deep: #004e92;
-  --party-joguk-deeper: #00284d;
+  --party-3-lighter: #c2e0f9;
+  --party-3-light: #59b2e7;
+  --party-3-main: #0073cf;
+  --party-3-deep: #004e92;
+  --party-3-deeper: #00284d;
 
   /* 개혁신당 */
-  --party-gaehyuk-lighter: #ffe2cb;
-  --party-gaehyuk-light: #ffae70;
-  --party-gaehyuk-main: #ff7210;
-  --party-gaehyuk-deep: #c25106;
-  --party-gaehyuk-deeper: #4a2502;
+  --party-4-lighter: #ffe2cb;
+  --party-4-light: #ffae70;
+  --party-4-main: #ff7210;
+  --party-4-deep: #c25106;
+  --party-4-deeper: #4a2502;
 
   /* 진보당 */
-  --party-jinbo-lighter: #ffd6de;
-  --party-jinbo-light: #ff7b94;
-  --party-jinbo-main: #d6001c;
-  --party-jinbo-deep: #8c0021;
-  --party-jinbo-deeper: #470010;
+  --party-5-lighter: #ffd6de;
+  --party-5-light: #ff7b94;
+  --party-5-main: #d6001c;
+  --party-5-deep: #8c0021;
+  --party-5-deeper: #470010;
 
   /* 기본소득당 */
-  --party-basic-lighter: #c3f4ef;
-  --party-basic-light: #70e3da;
-  --party-basic-main: #00d2c3;
-  --party-basic-deep: #029c89;
-  --party-basic-deeper: #01483f;
+  --party-6-lighter: #c3f4ef;
+  --party-6-light: #70e3da;
+  --party-6-main: #00d2c3;
+  --party-6-deep: #029c89;
+  --party-6-deeper: #01483f;
 
   /* 사회민주당 */
-  --party-saminju-lighter: #ffe2cb;
-  --party-saminju-light: #ffbb70;
-  --party-saminju-main: #f58400;
-  --party-saminju-deep: #ad5c01;
-  --party-saminju-deeper: #473002;
+  --party-7-lighter: #ffe2cb;
+  --party-7-light: #ffbb70;
+  --party-7-main: #f58400;
+  --party-7-deep: #ad5c01;
+  --party-7-deeper: #473002;
 
   /* 무소속 */
-  --party-none-lighter: #f0f0f0;
-  --party-none-light: #cfcfcf;
-  --party-none-main: #808080;
-  --party-none-deep: #565656;
-  --party-none-deeper: #212121;
+  --party-8-lighter: #f0f0f0;
+  --party-8-light: #cfcfcf;
+  --party-8-main: #808080;
+  --party-8-deep: #565656;
+  --party-8-deeper: #212121;
 }
 
 @theme inline {
@@ -234,60 +227,60 @@ body,
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* 더불어민주당 */
-  --color-party-minju-lighter: var(--party-minju-lighter);
-  --color-party-minju-light: var(--party-minju-light);
-  --color-party-minju-main: var(--party-minju-main);
-  --color-party-minju-deep: var(--party-minju-deep);
-  --color-party-minju-deeper: var(--party-minju-deeper);
+  --color-party-1-lighter: var(--party-1-lighter);
+  --color-party-1-light: var(--party-1-light);
+  --color-party-1-main: var(--party-1-main);
+  --color-party-1-deep: var(--party-1-deep);
+  --color-party-1-deeper: var(--party-1-deeper);
 
   /* 국민의힘 */
-  --color-party-kukmin-lighter: var(--party-kukmin-lighter);
-  --color-party-kukmin-light: var(--party-kukmin-light);
-  --color-party-kukmin-main: var(--party-kukmin-main);
-  --color-party-kukmin-deep: var(--party-kukmin-deep);
-  --color-party-kukmin-deeper: var(--party-kukmin-deeper);
+  --color-party-2-lighter: var(--party-2-lighter);
+  --color-party-2-light: var(--party-2-light);
+  --color-party-2-main: var(--party-2-main);
+  --color-party-2-deep: var(--party-2-deep);
+  --color-party-2-deeper: var(--party-2-deeper);
 
   /* 조국혁신당 */
-  --color-party-joguk-lighter: var(--party-joguk-lighter);
-  --color-party-joguk-light: var(--party-joguk-light);
-  --color-party-joguk-main: var(--party-joguk-main);
-  --color-party-joguk-deep: var(--party-joguk-deep);
-  --color-party-joguk-deeper: var(--party-joguk-deeper);
+  --color-party-3-lighter: var(--party-3-lighter);
+  --color-party-3-light: var(--party-3-light);
+  --color-party-3-main: var(--party-3-main);
+  --color-party-3-deep: var(--party-3-deep);
+  --color-party-3-deeper: var(--party-3-deeper);
 
   /* 개혁신당 */
-  --color-party-gaehyuk-lighter: var(--party-gaehyuk-lighter);
-  --color-party-gaehyuk-light: var(--party-gaehyuk-light);
-  --color-party-gaehyuk-main: var(--party-gaehyuk-main);
-  --color-party-gaehyuk-deep: var(--party-gaehyuk-deep);
-  --color-party-gaehyuk-deeper: var(--party-gaehyuk-deeper);
+  --color-party-4-lighter: var(--party-4-lighter);
+  --color-party-4-light: var(--party-4-light);
+  --color-party-4-main: var(--party-4-main);
+  --color-party-4-deep: var(--party-4-deep);
+  --color-party-4-deeper: var(--party-4-deeper);
 
   /* 진보당 */
-  --color-party-jinbo-lighter: var(--party-jinbo-lighter);
-  --color-party-jinbo-light: var(--party-jinbo-light);
-  --color-party-jinbo-main: var(--party-jinbo-main);
-  --color-party-jinbo-deep: var(--party-jinbo-deep);
-  --color-party-jinbo-deeper: var(--party-jinbo-deeper);
+  --color-party-5-lighter: var(--party-5-lighter);
+  --color-party-5-light: var(--party-5-light);
+  --color-party-5-main: var(--party-5-main);
+  --color-party-5-deep: var(--party-5-deep);
+  --color-party-5-deeper: var(--party-5-deeper);
 
   /* 기본소득당 */
-  --color-party-basic-lighter: var(--party-basic-lighter);
-  --color-party-basic-light: var(--party-basic-light);
-  --color-party-basic-main: var(--party-basic-main);
-  --color-party-basic-deep: var(--party-basic-deep);
-  --color-party-basic-deeper: var(--party-basic-deeper);
+  --color-party-6-lighter: var(--party-6-lighter);
+  --color-party-6-light: var(--party-6-light);
+  --color-party-6-main: var(--party-6-main);
+  --color-party-6-deep: var(--party-6-deep);
+  --color-party-6-deeper: var(--party-6-deeper);
 
   /* 사회민주당 */
-  --color-party-saminju-lighter: var(--party-saminju-lighter);
-  --color-party-saminju-light: var(--party-saminju-light);
-  --color-party-saminju-main: var(--party-saminju-main);
-  --color-party-saminju-deep: var(--party-saminju-deep);
-  --color-party-saminju-deeper: var(--party-saminju-deeper);
+  --color-party-7-lighter: var(--party-7-lighter);
+  --color-party-7-light: var(--party-7-light);
+  --color-party-7-main: var(--party-7-main);
+  --color-party-7-deep: var(--party-7-deep);
+  --color-party-7-deeper: var(--party-7-deeper);
 
   /* 무소속 */
-  --color-party-none-lighter: var(--party-none-lighter);
-  --color-party-none-light: var(--party-none-light);
-  --color-party-none-main: var(--party-none-main);
-  --color-party-none-deep: var(--party-none-deep);
-  --color-party-none-deeper: var(--party-none-deeper);
+  --color-party-8-lighter: var(--party-8-lighter);
+  --color-party-8-light: var(--party-8-light);
+  --color-party-8-main: var(--party-8-main);
+  --color-party-8-deep: var(--party-8-deep);
+  --color-party-8-deeper: var(--party-8-deeper);
 }
 
 .dark {
@@ -324,60 +317,60 @@ body,
   --sidebar-ring: oklch(0.556 0 0);
 
   /* 더불어민주당 */
-  --party-minju-lighter: #080e2f;
-  --party-minju-light: #101a60;
-  --party-minju-main: #3a51a2;
-  --party-minju-deep: #7587c8;
-  --party-minju-deeper: #d2dbf6;
+  --party-1-lighter: #080e2f;
+  --party-1-light: #101a60;
+  --party-1-main: #3a51a2;
+  --party-1-deep: #7587c8;
+  --party-1-deeper: #d2dbf6;
 
   /* 국민의힘 */
-  --party-kukmin-lighter: #48070a;
-  --party-kukmin-light: #9a141e;
-  --party-kukmin-main: #f15664;
-  --party-kukmin-deep: #ff9ca7;
-  --party-kukmin-deeper: #ffd9df;
+  --party-2-lighter: #48070a;
+  --party-2-light: #9a141e;
+  --party-2-main: #f15664;
+  --party-2-deep: #ff9ca7;
+  --party-2-deeper: #ffd9df;
 
   /* 조국혁신당 */
-  --party-joguk-lighter: #00284d;
-  --party-joguk-light: #004e92;
-  --party-joguk-main: #26a5e6;
-  --party-joguk-deep: #59b2e7;
-  --party-joguk-deeper: #c2e0f9;
+  --party-3-lighter: #00284d;
+  --party-3-light: #004e92;
+  --party-3-main: #26a5e6;
+  --party-3-deep: #59b2e7;
+  --party-3-deeper: #c2e0f9;
 
   /* 개혁신당 */
-  --party-gaehyuk-lighter: #4a2502;
-  --party-gaehyuk-light: #c25106;
-  --party-gaehyuk-main: #ff9546;
-  --party-gaehyuk-deep: #ffae70;
-  --party-gaehyuk-deeper: #ffe2cb;
+  --party-4-lighter: #4a2502;
+  --party-4-light: #c25106;
+  --party-4-main: #ff9546;
+  --party-4-deep: #ffae70;
+  --party-4-deeper: #ffe2cb;
 
   /* 진보당 */
-  --party-jinbo-lighter: #470010;
-  --party-jinbo-light: #8c0021;
-  --party-jinbo-main: #e34763;
-  --party-jinbo-deep: #ff7b94;
-  --party-jinbo-deeper: #ffd6de;
+  --party-5-lighter: #470010;
+  --party-5-light: #8c0021;
+  --party-5-main: #e34763;
+  --party-5-deep: #ff7b94;
+  --party-5-deeper: #ffd6de;
 
   /* 기본소득당 */
-  --party-basic-lighter: #01483f;
-  --party-basic-light: #029c89;
-  --party-basic-main: #1ce3d0;
-  --party-basic-deep: #70e3da;
-  --party-basic-deeper: #c3f4ef;
+  --party-6-lighter: #01483f;
+  --party-6-light: #029c89;
+  --party-6-main: #1ce3d0;
+  --party-6-deep: #70e3da;
+  --party-6-deeper: #c3f4ef;
 
   /* 사회민주당 */
-  --party-saminju-lighter: #473002;
-  --party-saminju-light: #ad5c01;
-  --party-saminju-main: #ffab3b;
-  --party-saminju-deep: #ffbb70;
-  --party-saminju-deeper: #ffe2cb;
+  --party-7-lighter: #473002;
+  --party-7-light: #ad5c01;
+  --party-7-main: #ffab3b;
+  --party-7-deep: #ffbb70;
+  --party-7-deeper: #ffe2cb;
 
   /* 무소속 */
-  --party-none-lighter: #212121;
-  --party-none-light: #565656;
-  --party-none-main: #b3b3b3;
-  --party-none-deep: #cfcfcf;
-  --party-none-deeper: #f0f0f0;
+  --party-8-lighter: #212121;
+  --party-8-light: #565656;
+  --party-8-main: #b3b3b3;
+  --party-8-deep: #cfcfcf;
+  --party-8-deeper: #f0f0f0;
 }
 
 @layer base {
@@ -387,4 +380,397 @@ body,
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Party Color Utility Classes */
+/* 더불어민주당 */
+.bg-party-1-lighter {
+  background-color: var(--party-1-lighter);
+}
+.bg-party-1-light {
+  background-color: var(--party-1-light);
+}
+.bg-party-1-main {
+  background-color: var(--party-1-main);
+}
+.bg-party-1-deep {
+  background-color: var(--party-1-deep);
+}
+.bg-party-1-deeper {
+  background-color: var(--party-1-deeper);
+}
+
+.text-party-1-lighter {
+  color: var(--party-1-lighter);
+}
+.text-party-1-light {
+  color: var(--party-1-light);
+}
+.text-party-1-main {
+  color: var(--party-1-main);
+}
+.text-party-1-deep {
+  color: var(--party-1-deep);
+}
+.text-party-1-deeper {
+  color: var(--party-1-deeper);
+}
+
+.border-party-1-lighter {
+  border-color: var(--party-1-lighter);
+}
+.border-party-1-light {
+  border-color: var(--party-1-light);
+}
+.border-party-1-main {
+  border-color: var(--party-1-main);
+}
+.border-party-1-deep {
+  border-color: var(--party-1-deep);
+}
+.border-party-1-deeper {
+  border-color: var(--party-1-deeper);
+}
+
+/* 국민의힘 */
+.bg-party-2-lighter {
+  background-color: var(--party-2-lighter);
+}
+.bg-party-2-light {
+  background-color: var(--party-2-light);
+}
+.bg-party-2-main {
+  background-color: var(--party-2-main);
+}
+.bg-party-2-deep {
+  background-color: var(--party-2-deep);
+}
+.bg-party-2-deeper {
+  background-color: var(--party-2-deeper);
+}
+
+.text-party-2-lighter {
+  color: var(--party-2-lighter);
+}
+.text-party-2-light {
+  color: var(--party-2-light);
+}
+.text-party-2-main {
+  color: var(--party-2-main);
+}
+.text-party-2-deep {
+  color: var(--party-2-deep);
+}
+.text-party-2-deeper {
+  color: var(--party-2-deeper);
+}
+
+.border-party-2-lighter {
+  border-color: var(--party-2-lighter);
+}
+.border-party-2-light {
+  border-color: var(--party-2-light);
+}
+.border-party-2-main {
+  border-color: var(--party-2-main);
+}
+.border-party-2-deep {
+  border-color: var(--party-2-deep);
+}
+.border-party-2-deeper {
+  border-color: var(--party-2-deeper);
+}
+
+/* 조국혁신당 */
+.bg-party-3-lighter {
+  background-color: var(--party-3-lighter);
+}
+.bg-party-3-light {
+  background-color: var(--party-3-light);
+}
+.bg-party-3-main {
+  background-color: var(--party-3-main);
+}
+.bg-party-3-deep {
+  background-color: var(--party-3-deep);
+}
+.bg-party-3-deeper {
+  background-color: var(--party-3-deeper);
+}
+
+.text-party-3-lighter {
+  color: var(--party-3-lighter);
+}
+.text-party-3-light {
+  color: var(--party-3-light);
+}
+.text-party-3-main {
+  color: var(--party-3-main);
+}
+.text-party-3-deep {
+  color: var(--party-3-deep);
+}
+.text-party-3-deeper {
+  color: var(--party-3-deeper);
+}
+
+.border-party-3-lighter {
+  border-color: var(--party-3-lighter);
+}
+.border-party-3-light {
+  border-color: var(--party-3-light);
+}
+.border-party-3-main {
+  border-color: var(--party-3-main);
+}
+.border-party-3-deep {
+  border-color: var(--party-3-deep);
+}
+.border-party-3-deeper {
+  border-color: var(--party-3-deeper);
+}
+
+/* 개혁신당 */
+.bg-party-4-lighter {
+  background-color: var(--party-4-lighter);
+}
+.bg-party-4-light {
+  background-color: var(--party-4-light);
+}
+.bg-party-4-main {
+  background-color: var(--party-4-main);
+}
+.bg-party-4-deep {
+  background-color: var(--party-4-deep);
+}
+.bg-party-4-deeper {
+  background-color: var(--party-4-deeper);
+}
+
+.text-party-4-lighter {
+  color: var(--party-4-lighter);
+}
+.text-party-4-light {
+  color: var(--party-4-light);
+}
+.text-party-4-main {
+  color: var(--party-4-main);
+}
+.text-party-4-deep {
+  color: var(--party-4-deep);
+}
+.text-party-4-deeper {
+  color: var(--party-4-deeper);
+}
+
+.border-party-4-lighter {
+  border-color: var(--party-4-lighter);
+}
+.border-party-4-light {
+  border-color: var(--party-4-light);
+}
+.border-party-4-main {
+  border-color: var(--party-4-main);
+}
+.border-party-4-deep {
+  border-color: var(--party-4-deep);
+}
+.border-party-4-deeper {
+  border-color: var(--party-4-deeper);
+}
+
+/* 진보당 */
+.bg-party-5-lighter {
+  background-color: var(--party-5-lighter);
+}
+.bg-party-5-light {
+  background-color: var(--party-5-light);
+}
+.bg-party-5-main {
+  background-color: var(--party-5-main);
+}
+.bg-party-5-deep {
+  background-color: var(--party-5-deep);
+}
+.bg-party-5-deeper {
+  background-color: var(--party-5-deeper);
+}
+
+.text-party-5-lighter {
+  color: var(--party-5-lighter);
+}
+.text-party-5-light {
+  color: var(--party-5-light);
+}
+.text-party-5-main {
+  color: var(--party-5-main);
+}
+.text-party-5-deep {
+  color: var(--party-5-deep);
+}
+.text-party-5-deeper {
+  color: var(--party-5-deeper);
+}
+
+.border-party-5-lighter {
+  border-color: var(--party-5-lighter);
+}
+.border-party-5-light {
+  border-color: var(--party-5-light);
+}
+.border-party-5-main {
+  border-color: var(--party-5-main);
+}
+.border-party-5-deep {
+  border-color: var(--party-5-deep);
+}
+.border-party-5-deeper {
+  border-color: var(--party-5-deeper);
+}
+
+/* 기본소득당 */
+.bg-party-6-lighter {
+  background-color: var(--party-6-lighter);
+}
+.bg-party-6-light {
+  background-color: var(--party-6-light);
+}
+.bg-party-6-main {
+  background-color: var(--party-6-main);
+}
+.bg-party-6-deep {
+  background-color: var(--party-6-deep);
+}
+.bg-party-6-deeper {
+  background-color: var(--party-6-deeper);
+}
+
+.text-party-6-lighter {
+  color: var(--party-6-lighter);
+}
+.text-party-6-light {
+  color: var(--party-6-light);
+}
+.text-party-6-main {
+  color: var(--party-6-main);
+}
+.text-party-6-deep {
+  color: var(--party-6-deep);
+}
+.text-party-6-deeper {
+  color: var(--party-6-deeper);
+}
+
+.border-party-6-lighter {
+  border-color: var(--party-6-lighter);
+}
+.border-party-6-light {
+  border-color: var(--party-6-light);
+}
+.border-party-6-main {
+  border-color: var(--party-6-main);
+}
+.border-party-6-deep {
+  border-color: var(--party-6-deep);
+}
+.border-party-6-deeper {
+  border-color: var(--party-6-deeper);
+}
+
+/* 사회민주당 */
+.bg-party-7-lighter {
+  background-color: var(--party-7-lighter);
+}
+.bg-party-7-light {
+  background-color: var(--party-7-light);
+}
+.bg-party-7-main {
+  background-color: var(--party-7-main);
+}
+.bg-party-7-deep {
+  background-color: var(--party-7-deep);
+}
+.bg-party-7-deeper {
+  background-color: var(--party-7-deeper);
+}
+
+.text-party-7-lighter {
+  color: var(--party-7-lighter);
+}
+.text-party-7-light {
+  color: var(--party-7-light);
+}
+.text-party-7-main {
+  color: var(--party-7-main);
+}
+.text-party-7-deep {
+  color: var(--party-7-deep);
+}
+.text-party-7-deeper {
+  color: var(--party-7-deeper);
+}
+
+.border-party-7-lighter {
+  border-color: var(--party-7-lighter);
+}
+.border-party-7-light {
+  border-color: var(--party-7-light);
+}
+.border-party-7-main {
+  border-color: var(--party-7-main);
+}
+.border-party-7-deep {
+  border-color: var(--party-7-deep);
+}
+.border-party-7-deeper {
+  border-color: var(--party-7-deeper);
+}
+
+/* 무소속 */
+.bg-party-8-lighter {
+  background-color: var(--party-8-lighter);
+}
+.bg-party-8-light {
+  background-color: var(--party-8-light);
+}
+.bg-party-8-main {
+  background-color: var(--party-8-main);
+}
+.bg-party-8-deep {
+  background-color: var(--party-8-deep);
+}
+.bg-party-8-deeper {
+  background-color: var(--party-8-deeper);
+}
+
+.text-party-8-lighter {
+  color: var(--party-8-lighter);
+}
+.text-party-8-light {
+  color: var(--party-8-light);
+}
+.text-party-8-main {
+  color: var(--party-8-main);
+}
+.text-party-8-deep {
+  color: var(--party-8-deep);
+}
+.text-party-8-deeper {
+  color: var(--party-8-deeper);
+}
+
+.border-party-8-lighter {
+  border-color: var(--party-8-lighter);
+}
+.border-party-8-light {
+  border-color: var(--party-8-light);
+}
+.border-party-8-main {
+  border-color: var(--party-8-main);
+}
+.border-party-8-deep {
+  border-color: var(--party-8-deep);
+}
+.border-party-8-deeper {
+  border-color: var(--party-8-deeper);
 }
