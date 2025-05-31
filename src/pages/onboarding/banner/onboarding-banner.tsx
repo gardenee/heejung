@@ -1,5 +1,6 @@
 import { getBrighterColor, getDarkerColor } from "@/utils/color-utils";
 import { memo, useMemo } from "react";
+import { WaveDivider } from "@/components/wave-divider";
 
 type OnboardingBannerProps = {
   mainColor?: string;
@@ -25,7 +26,7 @@ const OnboardingBannerComponent = ({
 
   return (
     <div
-      className="relative w-full h-64 md:h-72 flex justify-center items-center overflow-hidden"
+      className="relative w-full min-w-96 h-64 md:h-72 flex justify-center items-center overflow-hidden"
       style={backgroundStyle}
     >
       {/* 배경 장식 요소들 */}
@@ -60,13 +61,7 @@ const OnboardingBannerComponent = ({
 
       {/* 하단 웨이브 효과 */}
       <div className="absolute bottom-0 left-0 w-full">
-        <svg
-          className="w-full h-12 fill-gray-50"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,120 C150,100 350,60 600,80 C850,100 1050,120 1200,100 L1200,120 Z"></path>
-        </svg>
+        <WaveDivider />
       </div>
     </div>
   );
