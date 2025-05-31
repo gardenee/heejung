@@ -1,4 +1,4 @@
-import { getBrighterColor, getDarkerColor } from "@/utils/color-utils";
+import { getBrighterColor, getDarkerColor } from "@/utils/color";
 import { memo, useMemo } from "react";
 
 type OnboardingBannerProps = {
