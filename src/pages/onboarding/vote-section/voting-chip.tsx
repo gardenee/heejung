@@ -1,6 +1,6 @@
-import { memo, useCallback, useMemo, useState } from "react";
-import type { Party } from "./voting-section";
-import { CheckIcon } from "lucide-react";
+import { memo, useCallback, useMemo, useState } from 'react';
+import type { Party } from './voting-section';
+import { CheckIcon } from 'lucide-react';
 
 type VotingChipsProps = Party & {
   onClick?: (partyId: number) => void;
@@ -20,7 +20,7 @@ const VotingChipComponent = ({
       transition-all duration-300 ease-out
       bg-white shadow-lg hover:shadow-xl
       transform hover:-translate-y-1
-      ${isHovered ? "text-white" : "text-gray-800"}
+      ${isHovered ? 'text-white' : 'text-gray-800'}
     `;
   }, [isHovered]);
 
@@ -37,25 +37,21 @@ const VotingChipComponent = ({
       className={buttonStyle}
     >
       <div
-        className={`
-          absolute inset-0 
-          transition-transform duration-300 ease-out 
-          bg-party-${partyId}-main
-        `}
+        className={`absolute inset-0 transition-transform duration-300 ease-out bg-party-${partyId}-main `}
         style={{
-          transform: isHovered ? "translateX(0%)" : "translateX(-100%)",
+          transform: isHovered ? 'translateX(0%)' : 'translateX(-100%)',
         }}
       />
 
-      <div className="relative z-10 flex items-center gap-4">
+      <div className='relative z-10 flex items-center gap-4'>
         {isHovered ? (
-          <CheckIcon className="w-5 h-5 text-white drop-shadow-sm" />
+          <CheckIcon className='h-5 w-5 text-white drop-shadow-sm' />
         ) : (
           <div
-            className={`w-5 h-5 rounded-full bg-party-${partyId}-main shadow-sm`}
+            className={`h-5 w-5 rounded-full bg-party-${partyId}-main shadow-sm`}
           />
         )}
-        <span className="text-lg font-semibold tracking-tight w-24 text-left">
+        <span className='w-24 text-left text-lg font-semibold tracking-tight'>
           {partyName}
         </span>
       </div>
