@@ -1,20 +1,11 @@
 import { OnboardingPage } from './pages/onboarding';
-import { useAuth } from './hooks/useAuth';
-import { useEffect } from 'react';
-import { getParties } from './api/party';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { useMetadata } from './contexts/metadata-context/metadata-context';
 
 const App = () => {
-  const { isInitialized, isLoading } = useAuth();
+  const { status } = useMetadata();
 
-  useEffect(() => {
-    if (isInitialized) {
-      getParties().then(res => {
-        console.log(res);
-      });
-    }
-  }, [isInitialized, isLoading]);
-
-  if (isLoading) {
+  if (status === 'pending') {
     return (
       <div
         style={{
@@ -25,12 +16,12 @@ const App = () => {
           fontSize: '16px',
         }}
       >
-        앱을 로딩중입니다...
+        메타데이터를 로딩중입니다...
       </div>
     );
   }
 
-  if (!isInitialized) {
+  if (status === 'error') {
     return (
       <div
         style={{
@@ -39,15 +30,19 @@ const App = () => {
           alignItems: 'center',
           height: '100vh',
           fontSize: '16px',
-          color: 'red',
         }}
       >
-        앱 초기화에 실패했습니다. 페이지를 새로고침해주세요.
+        메타데이터 로딩 중 오류가 발생했습니다.
       </div>
     );
   }
 
-  return <OnboardingPage />;
+  return (
+    <>
+      <OnboardingPage />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </>
+  );
 };
 
 export default App;

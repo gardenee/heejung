@@ -1,6 +1,6 @@
 import { memo, useCallback, useMemo, useState } from 'react';
-import type { Party } from './voting-section';
 import { CheckIcon } from 'lucide-react';
+import type { Party } from '@/types/party';
 
 type VotingChipsProps = Party & {
   onClick?: (partyId: number) => void;
@@ -8,7 +8,7 @@ type VotingChipsProps = Party & {
 
 const VotingChipComponent = ({
   id: partyId,
-  name: partyName,
+  partyName,
   onClick,
 }: VotingChipsProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
