@@ -1,50 +1,46 @@
-import { useEffect, useState } from 'react'
-import { getAnonymousUserId } from '../stores/auth'
+import { useEffect, useState } from 'react';
+import { useAuthStore } from '@/stores/auth';
 
 interface UseAuthReturn {
-  userId: string | null
-  isInitialized: boolean
-  isLoading: boolean
+  isAuthenticated: boolean;
+  userId: string | null;
+  isInitialized: boolean;
+  isLoading: boolean;
 }
 
 export const useAuth = (): UseAuthReturn => {
-  const [userId, setUserId] = useState<string | null>(null)
-  const [isInitialized, setIsInitialized] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
+  const { initAnonymousUserId } = useAuthStore();
+
+  const [userId, setUserId] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     const initializeAuth = async () => {
       try {
-        setIsLoading(true)
-        
-        const anonymousId = getAnonymousUserId()
-        setUserId(anonymousId)
-        setIsInitialized(true)
-        
-        console.log('Auth initialized with user ID:', anonymousId)
-      } catch (error) {
-        console.error('Auth initialization failed:', error)
-        setIsInitialized(false)
-      } finally {
-        setIsLoading(false)
-      }
-    }
+        setIsLoading(true);
 
-    initializeAuth()
-  }, [])
+        const anonymousId = initAnonymousUserId();
+        setUserId(anonymousId);
+        setIsAuthenticated(false); // 현재는 모든 사용자가 익명 사용자
+        setIsInitialized(true);
+        console.log('Auth initialized with user ID:', userId);
+      } catch (error) {
+        setIsInitialized(false);
+        console.error('Auth initialization failed:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    initializeAuth();
+  }, [initAnonymousUserId]);
 
   return {
+    isAuthenticated,
     userId,
+    isLoading,
     isInitialized,
-    isLoading
-  }
-}
-
-export const useAuthInitializer = (): UseAuthReturn => {
-  return useAuth()
-}
-
-export const useCurrentUserId = (): string => {
-  const anonymousId = getAnonymousUserId()
-  return anonymousId
-} 
+  };
+};
