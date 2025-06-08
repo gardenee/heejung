@@ -5,6 +5,7 @@ import {
   TrendingUpIcon,
 } from 'lucide-react';
 import { VoteActionButton } from './vote-action-button';
+import { useStorageImage } from '@/hooks/use-storage-image';
 
 interface VotedSectionProps {
   backgroundColor?: string;
@@ -24,9 +25,7 @@ export const VotedSection = ({
     trend: '+5.2%',
   };
 
-  const handleClickVoteAgain = () => {
-    console.log('다시 투표하기');
-  };
+  const partyImageUrl = useStorageImage('party/ppp.svg'); // TODO: sample image, 정리 예쩡
 
   return (
     <div
@@ -51,9 +50,11 @@ export const VotedSection = ({
         {/* 정당 정보 */}
         <div className='mb-6'>
           <div className='mb-2 flex items-center gap-4'>
-            <div className='flex h-16 w-16 items-center justify-center rounded-full bg-white/20 text-2xl font-bold'>
-              민
-            </div>
+            <img
+              src={partyImageUrl}
+              alt='party-image'
+              className='h-16 w-16 rounded-full bg-white p-2'
+            />
             <div>
               <h2 className='text-2xl font-bold'>{selectedParty.name}</h2>
               <p className='text-blue-100'>{selectedParty.englishName}</p>
