@@ -1,25 +1,36 @@
-import { v4 as uuidv4 } from 'uuid'
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import { v4 as uuidv4 } from 'uuid';
 
-const ANONYMOUS_USER_KEY = 'anonymous_user_id'
-
-export const getAnonymousUserId = (): string => {
-  const existingUserId = localStorage.getItem(ANONYMOUS_USER_KEY)
-  
-  if (existingUserId) {
-    return existingUserId
-  }
-  
-  const newUserId = uuidv4()
-  localStorage.setItem(ANONYMOUS_USER_KEY, newUserId)
-  
-  return newUserId
+interface AuthState {
+  anonymousUserId: string | null;
+  initAnonymousUserId: () => string;
+  resetAnonymousUserId: () => void;
+  hasAnonymousUserId: () => boolean;
 }
 
-export const resetAnonymousUserId = (): string => {
-  localStorage.removeItem(ANONYMOUS_USER_KEY)
-  return getAnonymousUserId()
-}
-
-export const hasAnonymousUserId = (): boolean => {
-  return localStorage.getItem(ANONYMOUS_USER_KEY) !== null
-} 
+export const useAuthStore = create<AuthState>()(
+  persist(
+    (set, get) => ({
+      anonymousUserId: null,
+      initAnonymousUserId: () => {
+        const currentUserId = get().anonymousUserId;
+        if (currentUserId) {
+          return currentUserId;
+        }
+        const newUserId = uuidv4();
+        set({ anonymousUserId: newUserId });
+        return newUserId;
+      },
+      resetAnonymousUserId: () => {
+        set({ anonymousUserId: null });
+      },
+      hasAnonymousUserId: () => {
+        return get().anonymousUserId !== null;
+      },
+    }),
+    {
+      name: 'auth-storage',
+    },
+  ),
+);

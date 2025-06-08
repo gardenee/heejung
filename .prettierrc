@@ -1,0 +1,61 @@
+{
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  "htmlWhitespaceSensitivity": "css",
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": true,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false,
+  "vueIndentScriptAndStyle": true,
+  "parser": "typescript",
+  "requirePragma": false,
+  "insertPragma": false,
+  "noExtraBrackets": true,
+  "arrowParens": "avoid",
+  "bracketSameLine": false,
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "printWidth": 200,
+        "parser": "json"
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 200,
+        "parser": "html"
+      }
+    },
+    {
+      "files": "*.css",
+      "options": {
+        "printWidth": 200,
+        "parser": "css"
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 200,
+        "parser": "markdown"
+      }
+    },
+    {
+      "files": "*.yml",
+      "options": {
+        "printWidth": 200,
+        "singleQuote": false,
+        "parser": "yaml"
+      }
+    }
+  ],
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
