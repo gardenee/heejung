@@ -7,7 +7,7 @@ export type Party = {
   color: string;
 };
 
-const PARTIES: Array<Party> = [
+const PARTIES: Party[] = [
   { id: 1, name: '더불어민주당', color: '#152484' },
   { id: 2, name: '국민의힘', color: '#e61e2b' },
   { id: 3, name: '조국혁신당', color: '#0073cf' },
@@ -19,8 +19,8 @@ const PARTIES: Array<Party> = [
 ];
 
 const VotingChipsComponent = () => {
-  const handleChipClick = useCallback((partyId: number) => {
-    // TODO: 투표 api 연결
+  const handleChipClick = useCallback(() => {
+    // TODO: partyId 파라미터로 받아서 투표 api 연결
   }, []);
 
   return (
