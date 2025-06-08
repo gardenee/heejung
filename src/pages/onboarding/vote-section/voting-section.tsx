@@ -4,7 +4,7 @@ import { VotingChip } from './voting-chip';
 
 const VotingChipsComponent = () => {
   const { parties } = useMetadata();
-  const handleChipClick = useCallback((partyId: number) => {
+  const handleChipClick = useCallback(() => {
     // TODO: 투표 api 연결
   }, []);
 
