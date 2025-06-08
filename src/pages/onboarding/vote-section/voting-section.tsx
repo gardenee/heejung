@@ -19,8 +19,8 @@ const PARTIES: Array<Party> = [
 ];
 
 const VotingChipsComponent = () => {
-  const handleChipClick = useCallback((partyId: number) => {
-    // TODO: 투표 api 연결
+  const handleChipClick = useCallback(() => {
+    // TODO: partyId 파라미터로 받아서 투표 api 연결
   }, []);
 
   return (
