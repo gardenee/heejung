@@ -1,37 +1,62 @@
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+
+export const DEFAULT_COOLDOWNS: Record<string, number> = {
+  cheer_note: 10 * 1000,
+  vote: 5 * 1000,
+  reaction: 1 * 1000,
+};
+
 export interface CooldownConfig {
   action: string;
   cooldownMs: number;
 }
 
-export const DEFAULT_COOLDOWNS: Record<string, number> = {
-  cheer_note: 10 * 1000,
-  vote: 5 * 1000,
-  party_create: 60 * 1000,
-  reaction: 1 * 1000,
-};
+interface CooldownState {
+  actionTimes: Record<string, number>; // userId_action -> timestamp
+  setLastActionTime: (userId: string, action: string) => void;
+  getLastActionTime: (userId: string, action: string) => number | null;
+}
+
+export const useCooldownStore = create<CooldownState>()(
+  persist(
+    (set, get) => ({
+      actionTimes: {},
+      setLastActionTime: (userId: string, action: string) => {
+        const key = getCooldownKey(userId, action);
+        const now = Date.now();
+        set(state => ({
+          actionTimes: {
+            ...state.actionTimes,
+            [key]: now,
+          },
+        }));
+      },
+      getLastActionTime: (userId: string, action: string) => {
+        const key = getCooldownKey(userId, action);
+        const { actionTimes } = get();
+        return actionTimes[key] || null;
+      },
+    }),
+    {
+      name: 'cooldown-store',
+    },
+  ),
+);
 
 const getCooldownKey = (userId: string, action: string): string => {
-  return `cooldown_${userId}_${action}`;
+  return `${userId}_${action}`;
 };
 
 export const setLastActionTime = (userId: string, action: string): void => {
-  const key = getCooldownKey(userId, action);
-  const now = Date.now();
-  localStorage.setItem(key, now.toString());
+  useCooldownStore.getState().setLastActionTime(userId, action);
 };
 
 export const getLastActionTime = (
   userId: string,
   action: string,
 ): number | null => {
-  const key = getCooldownKey(userId, action);
-  const storedTime = localStorage.getItem(key);
-
-  if (!storedTime) {
-    return null;
-  }
-
-  return parseInt(storedTime, 10);
+  return useCooldownStore.getState().getLastActionTime(userId, action);
 };
 
 export const isCooldownExpired = (

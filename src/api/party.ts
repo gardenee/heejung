@@ -1,35 +1,13 @@
 import { supabase } from '../lib/supabase';
 import type { Party } from '../models/party';
-import type {
-  ApiResponse,
-  PaginatedResponse,
-  PaginationParams,
-} from '../models/common';
+import type { ApiResponse } from '../models/common';
 
-export const getParties = async (
-  params: PaginationParams = {},
-): Promise<ApiResponse<PaginatedResponse<Party>>> => {
+export const getParties = async (): Promise<ApiResponse<Array<Party>>> => {
   try {
-    const { page = 1, limit = 10 } = params;
-    const offset = (page - 1) * limit;
-
-    const { count, error: countError } = await supabase
-      .from('PARTY')
-      .select('*', { count: 'exact', head: true });
-
-    if (countError) {
-      return {
-        data: null,
-        error: `파티 개수 조회 중 오류가 발생했습니다: ${countError.message}`,
-        success: false,
-      };
-    }
-
     const { data, error } = await supabase
       .from('PARTY')
       .select('*')
-      .order('created_at', { ascending: false })
-      .range(offset, offset + limit - 1);
+      .order('sort_seq', { ascending: true });
 
     if (error) {
       return {
@@ -39,16 +17,8 @@ export const getParties = async (
       };
     }
 
-    const totalPages = Math.ceil((count || 0) / limit);
-
     return {
-      data: {
-        data,
-        total: count || 0,
-        page,
-        limit,
-        totalPages,
-      },
+      data: data || [],
       error: null,
       success: true,
     };
