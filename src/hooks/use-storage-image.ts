@@ -11,7 +11,6 @@ export const useStorageImage = (path: string) => {
     let objectUrl = '';
 
     const loadImage = async () => {
-      console.log('loadImage: ' + STORAGE_BUCKET + '/' + path);
       const { data, error } = await supabase.storage
         .from(STORAGE_BUCKET)
         .download(path);
