@@ -266,8 +266,8 @@ export const getCheerNoteReactionStats = async (
  * 여러 응원 메시지의 리액션 통계를 일괄 조회합니다
  */
 export const getBulkCheerNoteReactionStats = async (
-  cheerNoteIds: number[],
-): Promise<ApiResponse<CheerNoteReactionStats[]>> => {
+  cheerNoteIds: Array<number>,
+): Promise<ApiResponse<Array<CheerNoteReactionStats>>> => {
   try {
     if (cheerNoteIds.length === 0) {
       return {
@@ -342,7 +342,7 @@ export const getBulkCheerNoteReactionStats = async (
  */
 export const getUserCheerNoteReactions = async (
   userId?: string,
-): Promise<ApiResponse<CheerNoteReaction[]>> => {
+): Promise<ApiResponse<Array<CheerNoteReaction>>> => {
   try {
     const targetUserId =
       userId || useAuthStore.getState().initAnonymousUserId();

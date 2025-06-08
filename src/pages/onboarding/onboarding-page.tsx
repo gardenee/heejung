@@ -1,9 +1,13 @@
-import { OnboardingBanner } from "./banner/onboarding-banner";
+import { OnboardingBanner } from './banner/onboarding-banner';
+import { VotingSection } from './vote-section/voting-section';
+import { VotedSection } from './vote-section/voted-section';
 
 export const OnboardingPage = () => {
   return (
-    <div className="w-full min-h-screen flex flex-col bg-gray-50 gap-12">
+    <div className='flex h-full w-full flex-col gap-8 bg-gray-50'>
       <OnboardingBanner />
+      <VotingSection />
+      <VotedSection />
     </div>
   );
 };
