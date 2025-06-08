@@ -24,10 +24,6 @@ export const VotedSection = ({
     trend: '+5.2%',
   };
 
-  const handleClickVoteAgain = () => {
-    console.log('다시 투표하기');
-  };
-
   return (
     <div
       className={`relative w-2/3 self-center overflow-hidden rounded-2xl ${backgroundColor} p-6 text-white shadow-xl`}
