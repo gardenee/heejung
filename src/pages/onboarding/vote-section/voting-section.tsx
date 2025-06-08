@@ -7,7 +7,7 @@ export type Party = {
   color: string;
 };
 
-const PARTIES: Party[] = [
+const PARTIES: Array<Party> = [
   { id: 1, name: '더불어민주당', color: '#152484' },
   { id: 2, name: '국민의힘', color: '#e61e2b' },
   { id: 3, name: '조국혁신당', color: '#0073cf' },

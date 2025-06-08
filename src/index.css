@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=IBM+Plex+Sans+KR&display=swap");
-@import "tailwindcss";
-@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=IBM+Plex+Sans+KR&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -89,7 +89,7 @@ body,
 
   line-height: 1.5;
   font-weight: 400;
-  font-family: "42dot Sans", "IBM Plex Sans KR", sans-serif;
+  font-family: '42dot Sans', 'IBM Plex Sans KR', sans-serif;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
