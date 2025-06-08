@@ -26,7 +26,7 @@ const OnboardingBannerComponent = ({
 
   return (
     <div
-      className='relative flex h-96 w-full min-w-96 items-center justify-center overflow-hidden'
+      className='relative flex h-64 w-full min-w-96 items-center justify-center overflow-hidden'
       style={backgroundStyle}
     >
       {/* 배경 장식 요소들 */}

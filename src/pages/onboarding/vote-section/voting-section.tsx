@@ -24,12 +24,12 @@ const VotingChipsComponent = () => {
   }, []);
 
   return (
-    <div className='flex w-2/3 flex-col items-center justify-center gap-6 self-center pt-4'>
-      <h2 className='text-2xl font-bold text-gray-800'>
+    <div className='flex w-2/3 flex-col justify-center gap-4 self-center'>
+      <h2 className='text-center text-lg font-bold text-gray-800'>
         응원하는 정당을 선택해주세요
       </h2>
 
-      <div className='grid min-w-3xl grid-cols-4 justify-items-center gap-x-5 gap-y-4'>
+      <div className='mx-auto grid w-fit grid-cols-4 gap-x-4 gap-y-3'>
         {PARTIES.map(party => {
           return (
             <VotingChip key={party.id} {...party} onClick={handleChipClick} />

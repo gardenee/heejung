@@ -15,10 +15,10 @@ const VotingChipComponent = ({
 
   const buttonStyle = useMemo(() => {
     return `
-      relative flex w-48 h-16 justify-center items-center
-      rounded-2xl cursor-pointer overflow-hidden 
+      relative flex w-36 h-12 justify-center items-center pl-4
+      rounded-lg cursor-pointer overflow-hidden 
       transition-all duration-300 ease-out
-      bg-white shadow-lg hover:shadow-xl
+      bg-white shadow-md hover:shadow-lg
       transform hover:-translate-y-1
       ${isHovered ? 'text-white' : 'text-gray-800'}
     `;
@@ -43,15 +43,15 @@ const VotingChipComponent = ({
         }}
       />
 
-      <div className='relative z-10 flex items-center gap-4'>
+      <div className='relative z-10 flex items-center gap-2'>
         {isHovered ? (
-          <CheckIcon className='h-5 w-5 text-white drop-shadow-sm' />
+          <CheckIcon className='h-4 w-4 text-white drop-shadow-sm' />
         ) : (
           <div
-            className={`h-5 w-5 rounded-full bg-party-${partyId}-main shadow-sm`}
+            className={`h-4 w-4 rounded-full bg-party-${partyId}-main shadow-sm`}
           />
         )}
-        <span className='w-24 text-left text-lg font-semibold tracking-tight'>
+        <span className='text-basic w-24 text-left font-semibold tracking-tight'>
           {partyName}
         </span>
       </div>
